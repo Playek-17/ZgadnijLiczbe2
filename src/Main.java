@@ -39,6 +39,49 @@ public class Main {
         int zgadywanaLiczba = scanner.nextInt();
         System.out.println("Wpisano: "+zgadywanaLiczba);
 
+        //instrukcja warunkowa
+        if(wylosowanaLiczba == zgadywanaLiczba){
+            System.out.println("Brawo");
+        }else{
+            System.out.println("Moze nastepnym razem");
+        }
+        int roznica;
+        if(wylosowanaLiczba>zgadywanaLiczba){
+            roznica = wylosowanaLiczba - zgadywanaLiczba;
+        }else{
+            roznica = zgadywanaLiczba - wylosowanaLiczba;
+        }
+        //wyrazenie warunkowe -> zwraca wartosc
+        roznica = zgadywanaLiczba > wylosowanaLiczba? zgadywanaLiczba - wylosowanaLiczba : wylosowanaLiczba - zgadywanaLiczba;
+        roznica = roznica/10; //dzielenie całkowite -> wynik całkowite bo dzielimy dwie liczby całkowite
+
+        //instrukcja wyboru
+        switch (roznica){
+            case 0:
+                System.out.println("bardzo blisko");
+                break;
+            case 1:
+                System.out.println("dosc blisko");
+                break;
+            case 3:
+                System.out.println("nie najgorzej");
+                break;
+            default:
+                System.out.println("Sprobuj innym razem");
+        }
+
+        //wyrazenie switch
+        //zwraca wartosc
+        System.out.println(
+                switch (roznica){
+                    case 0 -> "Bardzo blisko";
+                    case 1 -> "dosc blisko";
+                    case 2 -> "nie najgorzej";
+                    default -> "sprobuj innym razem";
+                }
+        );
+
+
 
     }
 }
