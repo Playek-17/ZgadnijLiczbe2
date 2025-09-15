@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -80,6 +81,24 @@ public class Main {
                     default -> "sprobuj innym razem";
                 }
         );
+        //zgadywanie 10 razy
+        Random random = new Random();
+        wylosowanaLiczba = random.nextInt(1,101);
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Zgadnij liczbe");
+            zgadywanaLiczba = scanner.nextInt();
+            if(zgadywanaLiczba == wylosowanaLiczba){
+                System.out.println("Gratulacje, to jest ta liczba");
+                break;
+            }
+            if(zgadywanaLiczba>wylosowanaLiczba){
+                System.out.println("Wpisano za duzo");
+            }else{
+                System.out.println("Wpisano za malo");
+
+            }
+        }
 
 
 
