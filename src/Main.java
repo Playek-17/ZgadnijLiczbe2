@@ -115,6 +115,21 @@ public class Main {
             System.out.println("Podaj liczbę");
             zgadywanaLiczba = scanner.nextInt();
         }
+        System.out.println("Kolejna gra, losujemy nową liczbę");
+        wylosowanaLiczba = random.nextInt(1,101);
+        //dry = dont repeat yourself
+        do{
+            System.out.println("Podaj liczbę");
+            zgadywanaLiczba = scanner.nextInt();
+            if(zgadywanaLiczba != wylosowanaLiczba){
+                if(zgadywanaLiczba>wylosowanaLiczba){
+                    System.out.println("Wpisano za duzo");
+                }else{
+                    System.out.println("Wpisano za malo");
+                }
+            }
+
+        } while (zgadywanaLiczba != wylosowanaLiczba);
 
     }
 }
