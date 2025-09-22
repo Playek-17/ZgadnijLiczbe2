@@ -86,6 +86,7 @@ public class Main {
         wylosowanaLiczba = random.nextInt(1,101);
 
         for (int i = 0; i < 10; i++) {
+            //dla każdego
             System.out.println("Zgadnij liczbe");
             zgadywanaLiczba = scanner.nextInt();
             if(zgadywanaLiczba == wylosowanaLiczba){
@@ -99,8 +100,21 @@ public class Main {
 
             }
         }
-
-
+        //zgadnij licbze ->
+        //dopóki nie zgadniesz to krązymy w pętli
+        wylosowanaLiczba = random.nextInt(1,101);
+        System.out.println("Uwaga, losowanie nowej liczby z zakresu 1,100");
+        System.out.println("Podaj liczbę");
+        zgadywanaLiczba = scanner.nextInt();
+        while (wylosowanaLiczba != zgadywanaLiczba){
+            if(zgadywanaLiczba>wylosowanaLiczba){
+                System.out.println("Wpisano za duzo");
+            }else{
+                System.out.println("Wpisano za malo");
+            }
+            System.out.println("Podaj liczbę");
+            zgadywanaLiczba = scanner.nextInt();
+        }
 
     }
 }
